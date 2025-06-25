@@ -163,14 +163,11 @@ pf get --preview
 | **Cross-Platform** | ✅ CLI + IDE + MCP | ❌ Single platform |
 | **Analytics** | ✅ Usage tracking | ❌ Limited insights |
 | **Open Source** | ✅ MIT License | ❌ Proprietary |
-| **No Subscriptions** | ✅ Free forever | ❌ Monthly fees |
 
 ## 🔗 Links
 
-- **📚 Documentation**: [Full Documentation](https://github.com/aki21j/PromptForge/docs)
-- **🐛 Bug Reports**: [Issues](https://github.com/aki21j/PromptForge/issues)
-- **💡 Feature Requests**: [Discussions](https://github.com/aki21j/PromptForge/discussions)
-- **🔧 Development**: [Source Code](https://github.com/aki21j/PromptForge)
+- **🐛 Bug Reports**: [Issues](https://github.com/aki21j/promptforge-releases/issues)
+- **💡 Feature Requests**: [Discussions](https://github.com/aki21j/promptforge-releases/discussions)
 
 ## 📜 License
 
