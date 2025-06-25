@@ -13,17 +13,20 @@
 
 ### macOS/Linux
 ```bash
-# Download latest release
-curl -L https://github.com/aki21j/promptforge-releases/releases/latest/download/promptforge-install.sh | bash
+# Download from releases page and extract
+tar -xzf promptforge-*.tar.gz
+cd promptforge-*
+./install-beta.sh
 
-# Or manual install
-pip install promptforge
+# Or extract wheel and install directly
+pip install --user promptforge-*.whl
 ```
 
 ### Windows
 ```powershell
-# Download from releases page or use pip
-pip install promptforge
+# Extract zip file and run installer
+# Or install wheel directly
+pip install promptforge-*.whl
 ```
 
 ## 🌟 Features
@@ -35,6 +38,14 @@ pip install promptforge
 - **📱 Universal Access** - Works everywhere: terminal, IDE, and AI coding assistants
 - **⚡ Lightning Fast** - Local SQLite database with instant search and retrieval
 - **🛡️ Privacy First** - All data stored locally, no cloud dependencies
+
+## 📸 See It In Action
+
+### CLI Interface
+![PromptForge CLI](screenshots/main-interface.png)
+
+### IDE Integration  
+![VSCode Extension](screenshots/ide.png)
 
 ## 🚀 Quick Start
 
@@ -80,17 +91,23 @@ pf stats
 
 ### 🔥 All-in-One Installer (Recommended)
 ```bash
-# Downloads CLI + VSCode Extension + MCP Server
-curl -L https://github.com/aki21j/promptforge-releases/releases/latest/download/install-all.sh | bash
+# Download latest release from GitHub releases page
+# Extract and run installer
+tar -xzf promptforge-*.tar.gz
+cd promptforge-*
+chmod +x install-beta.sh
+./install-beta.sh
 ```
 
 ### 📦 Individual Components
 ```bash
-# CLI only
-pip install promptforge
+# CLI only - extract wheel from release package
+pip install --user promptforge-*.whl
 
-# VSCode extension: Search "PromptForge" in VS Code marketplace
-# MCP server: Included with CLI installation
+# VSCode extension: Install .vsix file from release package
+code --install-extension promptforge-*.vsix
+
+# MCP server: Included in release package, see installation guide
 ```
 
 ## 🔧 Advanced Usage
