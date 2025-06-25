@@ -167,7 +167,6 @@ pf get --preview
 ## 🔗 Links
 
 - **🐛 Bug Reports**: [Issues](https://github.com/aki21j/promptforge-releases/issues)
-- **💡 Feature Requests**: [Discussions](https://github.com/aki21j/promptforge-releases/discussions)
 
 ## 📜 License
 
