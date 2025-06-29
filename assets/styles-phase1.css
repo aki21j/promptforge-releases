@@ -1203,6 +1203,8 @@ VS Code-style interface showing PromptForge integration
     background: #1e1e1e;
     display: flex;
     flex-direction: column;
+    flex: 1;
+    min-height: 350px;
 }
 
 .editor-tabs {
@@ -1249,11 +1251,17 @@ VS Code-style interface showing PromptForge integration
 
 .editor-content {
     flex: 1;
-    padding: var(--space-4);
+    padding: 0;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.8125rem;
     line-height: 1.6;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    background: #1e1e1e;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Code syntax highlighting */
@@ -1262,6 +1270,9 @@ VS Code-style interface showing PromptForge integration
     margin-bottom: var(--space-1);
     opacity: 0;
     animation: codeLineAppear 0.6s ease-out forwards;
+    white-space: nowrap;
+    align-items: flex-start;
+    min-height: 1.5em;
 }
 
 .code-line:nth-child(1) { animation-delay: 0.5s; }
@@ -1282,12 +1293,18 @@ VS Code-style interface showing PromptForge integration
     color: #858585;
     margin-right: var(--space-4);
     min-width: 24px;
+    width: 24px;
     text-align: right;
     user-select: none;
+    flex-shrink: 0;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .code-content {
     flex: 1;
+    white-space: nowrap;
+    overflow: visible;
+    display: inline-block;
 }
 
 /* Syntax highlighting */
@@ -1434,6 +1451,26 @@ Phase 3 Implementation
     font-size: 1rem;
 }
 
+/* Demo Section */
+#demo .section-header {
+    text-align: center;
+    margin-bottom: var(--space-12);
+}
+
+#demo .section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+}
+
+#demo .section-header p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 /* Demo Content */
 .demo-content {
     animation: fadeIn 0.5s ease-in-out;
@@ -1444,6 +1481,9 @@ Phase 3 Implementation
     grid-template-columns: 2fr 1fr;
     gap: var(--space-8);
     align-items: start;
+    position: relative;
+    isolation: isolate;
+    contain: layout;
 }
 
 .demo-description {
@@ -1451,6 +1491,9 @@ Phase 3 Implementation
     background: var(--bg-elevated);
     border-radius: var(--radius-xl);
     border: 1px solid var(--border-subtle);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .demo-description h3 {
@@ -1491,6 +1534,10 @@ Phase 3 Implementation
     box-shadow: var(--shadow-xl);
     overflow: hidden;
     border: 1px solid #333;
+    position: relative;
+    isolation: isolate;
+    contain: layout;
+    transform: translateZ(0);
 }
 
 .vscode-header {
@@ -1590,6 +1637,9 @@ Phase 3 Implementation
     background: #1e1e1e;
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow: visible;
+    isolation: isolate;
 }
 
 .editor-tabs {
@@ -1627,7 +1677,8 @@ Phase 3 Implementation
     padding: var(--space-4);
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.8125rem;
-    line-height: 1.6;
+    line-height: 1.8;
+    overflow-y: auto;
 }
 
 .code-line {
@@ -1687,15 +1738,23 @@ Phase 3 Implementation
 /* Command Palette */
 .command-palette {
     position: absolute;
-    top: 60px;
+    top: 40px;
     left: 50%;
     transform: translateX(-50%);
     background: #2d2d2d;
     border: 1px solid #464647;
     border-radius: var(--radius-lg);
-    width: 500px;
+    width: 420px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    max-width: 85%;
+}
+
+/* Ensure command palette is contained within VSCode demo */
+#vscode-demo .command-palette {
+    position: absolute;
     z-index: 10;
+    contain: layout style paint;
 }
 
 .palette-header {
@@ -2223,7 +2282,7 @@ Phase 4 Professional Implementation
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
-    background: #0d1117;
+    /* background: #0d1117; */
     max-width: 100%;
     box-sizing: border-box;
 }
@@ -2937,8 +2996,8 @@ Phase 4 Professional Implementation
 }
 
 .feature-tab.active {
-    background: var(--brand-500);
-    border-color: var(--brand-500);
+    background: #2563eb;
+    border-color: #2563eb;
     color: white;
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
@@ -2969,7 +3028,65 @@ Phase 4 Professional Implementation
     display: block;
     opacity: 1;
     transform: translateY(0);
-    animation: fadeInUp 0.4s ease-out;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* IDE Feature Panel Code Styling - Match VSCode demo section exactly */
+.ide-feature-panel .code-line {
+    white-space: nowrap;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    max-width: 100%;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    line-height: 1.6;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+    opacity: 1;
+}
+
+.ide-feature-panel .code-content {
+    white-space: nowrap;
+    overflow: visible;
+    display: block;
+    flex: 1;
+    min-width: 0;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+}
+
+.ide-feature-panel .line-number {
+    color: #858585;
+    margin-right: var(--space-4);
+    min-width: 24px;
+    text-align: right;
+    user-select: none;
+    flex-shrink: 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+    line-height: 1.6;
+}
+
+/* IDE showcase container constraints */
+.ide-showcase {
+    overflow-x: auto;
+}
+
+.ide-feature-panel {
+    overflow-x: auto;
+    max-width: 100%;
+    background: #1e1e1e;
+    padding: var(--space-4);
+    flex: 1;
+    height: 100%;
+    min-height: 300px;
 }
 
 @keyframes fadeInUp {
