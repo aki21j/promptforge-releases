@@ -1,0 +1,115 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ "website", "main", "master" ]
+  pull_request:
+    branches: [ "website", "main", "master" ]
+  
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+        
+      - name: Optimize images (optional)
+        run: |
+          # Install image optimization tools if needed
+          # sudo apt-get update && sudo apt-get install -y imagemagick
+          echo "Image optimization could be added here"
+          
+      - name: Validate HTML
+        run: |
+          # Install HTML validator
+          npm install -g html-validate
+          # Validate HTML files
+          html-validate index.html || echo "HTML validation warnings found"
+          
+      - name: Minify CSS and JS (optional)
+        run: |
+          # Install minification tools
+          npm install -g clean-css-cli uglify-js
+          # Minify CSS
+          cleancss -o assets/styles.min.css assets/styles.css || cp assets/styles.css assets/styles.min.css
+          # Minify JS
+          uglifyjs assets/script.js -o assets/script.min.js || cp assets/script.js assets/script.min.js
+          echo "Minification completed"
+          
+      - name: Generate sitemap
+        run: |
+          cat > sitemap.xml << 'EOF'
+          <?xml version="1.0" encoding="UTF-8"?>
+          <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+            <url>
+              <loc>https://aki21j.github.io/promptforge-releases/</loc>
+              <lastmod>$(date -I)</lastmod>
+              <changefreq>weekly</changefreq>
+              <priority>1.0</priority>
+            </url>
+          </urlset>
+          EOF
+          
+      - name: Generate robots.txt
+        run: |
+          cat > robots.txt << 'EOF'
+          User-agent: *
+          Allow: /
+          
+          Sitemap: https://aki21j.github.io/promptforge-releases/sitemap.xml
+          EOF
+          
+      - name: Create CNAME file for custom domain (if needed)
+        run: |
+          # Uncomment and modify if you have a custom domain
+          # echo "your-domain.com" > CNAME
+          echo "CNAME file creation skipped - using GitHub Pages default domain"
+          
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # Upload entire repository
+          path: '.'
+
+  # Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        
+      - name: Output deployment URL
+        run: |
+          echo "Site deployed to: ${{ steps.deployment.outputs.page_url }}"
+          echo "Please wait a few minutes for the deployment to be fully available"
+          
+      - name: Post-deployment checks
+        run: |
+          # Wait a moment for deployment
+          sleep 30
+          # Check if site is accessible (basic check)
+          curl -f -s -o /dev/null "${{ steps.deployment.outputs.page_url }}" && echo "Site is accessible" || echo "Site check failed - may need more time"
