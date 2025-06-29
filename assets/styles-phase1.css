@@ -470,7 +470,7 @@ Professional spacing and layout utilities
 
 /* Container */
 .container {
-    max-width: 1200px;
+    max-width: 1320px;
     margin: 0 auto;
     padding: 0 var(--space-6);
 }
@@ -1075,7 +1075,7 @@ VS Code-style interface showing PromptForge integration
 
 /* IDE Interface Container */
 .ide-showcase {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     background: #1e1e1e;
     border-radius: var(--radius-xl);
