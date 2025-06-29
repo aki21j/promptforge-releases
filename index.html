@@ -33,9 +33,9 @@
             <div class="nav-links">
                 <a href="#features" class="nav-link">Features</a>
                 <a href="#install" class="nav-link">Install</a>
-                <a href="#docs" class="nav-link">Docs</a>
+                <a href="https://github.com/aki21j/promptforge-releases#readme" class="nav-link" target="_blank">Docs</a>
                 <a href="https://github.com/aki21j/promptforge-releases" class="nav-link" target="_blank">GitHub</a>
-                <a href="#install" class="cta-button">Get Started</a>
+                <a href="#quickstart" class="cta-button">Get Started</a>
             </div>
             <div class="mobile-menu-toggle">
                 <span></span>
@@ -51,15 +51,15 @@
             <div class="container">
                 <div class="hero-content">
                     <h1 class="hero-title">
-                        Professional AI Prompt Management
-                        <span class="gradient-text">Made Simple</span>
+                        <span class="hero-main">Professional AI Prompt</span>
+                        <span class="hero-sub">Management <span class="gradient-text">Made Simple</span></span>
                     </h1>
                     <p class="hero-subtitle">
                         Save, organize, search, and optimize your AI prompts with powerful templates, 
                         analytics, and cross-platform integration. CLI-first for developers.
                     </p>
                     <div class="hero-cta">
-                        <a href="#install" class="btn btn-primary">Get Started Free</a>
+                        <a href="#quickstart" class="btn btn-primary">Get Started Free</a>
                         <a href="#demo" class="btn btn-secondary">
                             <span>Watch Demo</span>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -122,6 +122,73 @@
                 <div class="section-header">
                     <h2>Everything you need for prompt management</h2>
                     <p>Built for developers, by developers. Local-first architecture with professional features.</p>
+                </div>
+                
+                <div class="features-showcase">
+                    <div class="features-terminal-section">
+                        <div class="feature-terminal">
+                            <div class="terminal-header">
+                                <div class="terminal-buttons">
+                                    <span class="btn-close"></span>
+                                    <span class="btn-minimize"></span>
+                                    <span class="btn-maximize"></span>
+                                </div>
+                                <div class="terminal-title">PromptForge Features Demo</div>
+                            </div>
+                            <div class="terminal-body">
+                                <div class="feature-demo" id="save-demo">
+                                    <div class="terminal-line">
+                                        <span class="prompt">$</span>
+                                        <span class="command">pf save "Explain this code step by step" --title "Code Explainer" --tags coding</span>
+                                    </div>
+                                    <div class="terminal-line output">
+                                        <span class="success">✓ Prompt saved successfully! ID: 12</span><br>
+                                        <span class="info">📊 Tagged: coding | ⭐ Rating: 5/5</span>
+                                    </div>
+                                </div>
+                                <div class="feature-demo" id="template-demo" style="display:none;">
+                                    <div class="terminal-line">
+                                        <span class="prompt">$</span>
+                                        <span class="command">pf save "Write a {{type}} about {{topic}} for {{audience}}" --template --title "Content Creator"</span>
+                                    </div>
+                                    <div class="terminal-line output">
+                                        <span class="success">✓ Template created with 3 variables</span><br>
+                                        <span class="template-vars">🔧 Variables: type, topic, audience</span>
+                                    </div>
+                                </div>
+                                <div class="feature-demo" id="search-demo" style="display:none;">
+                                    <div class="terminal-line">
+                                        <span class="prompt">$</span>
+                                        <span class="command">pf search "code" --tags coding --rating 4+</span>
+                                    </div>
+                                    <div class="terminal-line output">
+                                        <span class="result">🔍 Found 5 prompts matching criteria:</span><br>
+                                        <span class="result-item">12. Code Explainer (⭐⭐⭐⭐⭐) [coding]</span><br>
+                                        <span class="result-item">8. Debug Helper (⭐⭐⭐⭐) [coding, debug]</span><br>
+                                        <span class="result-item">5. Code Review (⭐⭐⭐⭐⭐) [coding, review]</span>
+                                    </div>
+                                </div>
+                                <div class="feature-demo" id="stats-demo" style="display:none;">
+                                    <div class="terminal-line">
+                                        <span class="prompt">$</span>
+                                        <span class="command">pf stats --detailed</span>
+                                    </div>
+                                    <div class="terminal-line output">
+                                        <span class="stats-header">📊 PromptForge Statistics</span><br>
+                                        <span class="stat-line">📝 Total Prompts: 47 | 🏷️ Tags: 12 | ⭐ Avg Rating: 4.2</span><br>
+                                        <span class="stat-line">🔥 Most Used: "Code Explainer" (23 times)</span><br>
+                                        <span class="stat-line">📈 This Month: +15 prompts, +89 uses</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-controls">
+                            <button class="feature-btn active" data-demo="save-demo">💾 Save Prompts</button>
+                            <button class="feature-btn" data-demo="template-demo">🔧 Templates</button>
+                            <button class="feature-btn" data-demo="search-demo">🔍 Smart Search</button>
+                            <button class="feature-btn" data-demo="stats-demo">📊 Analytics</button>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="features-grid">
@@ -299,7 +366,7 @@ pf save "Hello PromptForge!" --title "First Prompt"</code></pre>
         </section>
 
         <!-- Quick Start Section -->
-        <section class="quickstart">
+        <section id="quickstart" class="quickstart">
             <div class="container">
                 <div class="section-header">
                     <h2>Quick Start Guide</h2>
