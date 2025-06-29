@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromptForge - Professional AI Prompt Management</title>
+    <meta name="description" content="Cross-platform AI prompt management and optimization tool. Save, organize, search, and optimize your AI prompts with powerful templates and analytics.">
+    <meta name="keywords" content="AI, prompt management, CLI, developer tools, VSCode, Claude, templates">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="PromptForge - Professional AI Prompt Management">
+    <meta property="og:description" content="Cross-platform AI prompt management and optimization tool for developers and teams.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aki21j.github.io/promptforge-releases/">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PromptForge - Professional AI Prompt Management">
+    <meta name="twitter:description" content="Cross-platform AI prompt management and optimization tool for developers and teams.">
+    
+    <link rel="stylesheet" href="assets/styles-new.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-icon">🔥</span>
+                <span class="brand-text">PromptForge</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#install" class="nav-link">Install</a>
+                <a href="https://github.com/aki21j/promptforge-releases#readme" class="nav-link" target="_blank">Docs</a>
+                <a href="https://github.com/aki21j/promptforge-releases" class="nav-link" target="_blank">GitHub</a>
+                <a href="#quickstart" class="cta-button">Get Started</a>
+            </div>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        <span class="hero-main">Professional AI Prompt</span>
+                        <span class="hero-sub">Management <span class="gradient-text">Made Simple</span></span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Save, organize, search, and optimize your AI prompts with powerful templates, 
+                        analytics, and cross-platform integration. CLI-first for developers.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#quickstart" class="btn btn-primary">Get Started Free</a>
+                        <a href="#demo" class="btn btn-secondary">
+                            <span>Watch Demo</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="5,3 19,12 5,21"></polygon>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Open Source</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">Local-First</span>
+                            <span class="stat-label">Privacy</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">Platforms</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-buttons">
+                                <span class="btn-close"></span>
+                                <span class="btn-minimize"></span>
+                                <span class="btn-maximize"></span>
+                            </div>
+                            <div class="terminal-title">promptforge</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command typing-animation">pf save "Explain this code step by step" --title "Code Explainer"</span>
+                            </div>
+                            <div class="terminal-line output">
+                                <span class="success">✓ Prompt saved successfully! ID: 12</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command">pf search "code" --recent</span>
+                            </div>
+                            <div class="terminal-line output">
+                                <span class="result">🔍 Found 3 prompts:</span><br>
+                                <span class="result-item">12. Code Explainer (⭐⭐⭐⭐⭐)</span><br>
+                                <span class="result-item">8. Debug Helper (⭐⭐⭐⭐)</span><br>
+                                <span class="result-item">5. Code Review (⭐⭐⭐⭐⭐)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section - Inspired by Orchestra -->
+        <section id="features" class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Everything you need for prompt management</h2>
+                    <p>Built for developers, by developers. Local-first architecture with professional features.</p>
+                </div>
+                
+                <!-- Interactive Feature Showcase -->
+                <div class="feature-showcase-modern">
+                    <div class="feature-interface">
+                        <div class="interface-header">
+                            <div class="interface-nav">
+                                <span class="nav-item active">🔥 PromptForge</span>
+                                <span class="nav-item">📚 Library</span>
+                                <span class="nav-item">⚙️ Settings</span>
+                            </div>
+                            <div class="interface-actions">
+                                <button class="action-btn">+ New Prompt</button>
+                                <div class="user-avatar">👤</div>
+                            </div>
+                        </div>
+                        
+                        <div class="interface-content">
+                            <div class="feature-panel" id="panel-save">
+                                <div class="panel-header">
+                                    <h3>💾 Save & Organize</h3>
+                                    <span class="panel-badge">Active</span>
+                                </div>
+                                <div class="prompt-item">
+                                    <div class="prompt-header">
+                                        <span class="prompt-title">Code Explainer</span>
+                                        <div class="prompt-meta">
+                                            <span class="tag">coding</span>
+                                            <span class="rating">⭐⭐⭐⭐⭐</span>
+                                        </div>
+                                    </div>
+                                    <div class="prompt-content">"Explain this code step by step, focusing on..."</div>
+                                    <div class="prompt-stats">
+                                        <span>Used 23 times</span>
+                                        <span>•</span>
+                                        <span>Created 2 days ago</span>
+                                    </div>
+                                </div>
+                                <div class="prompt-item">
+                                    <div class="prompt-header">
+                                        <span class="prompt-title">Debug Helper</span>
+                                        <div class="prompt-meta">
+                                            <span class="tag">debug</span>
+                                            <span class="rating">⭐⭐⭐⭐</span>
+                                        </div>
+                                    </div>
+                                    <div class="prompt-content">"Help me debug this {{language}} code..."</div>
+                                    <div class="prompt-stats">
+                                        <span>Template</span>
+                                        <span>•</span>
+                                        <span>Used 15 times</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-panel" id="panel-template" style="display:none;">
+                                <div class="panel-header">
+                                    <h3>🔧 Smart Templates</h3>
+                                    <span class="panel-badge template">Template</span>
+                                </div>
+                                <div class="template-builder">
+                                    <div class="template-input">
+                                        <div class="input-label">Template Content</div>
+                                        <div class="template-text">Write a <span class="variable">{{type}}</span> about <span class="variable">{{topic}}</span> for <span class="variable">{{audience}}</span></div>
+                                    </div>
+                                    <div class="template-variables">
+                                        <div class="variable-item">
+                                            <span class="variable-name">type</span>
+                                            <span class="variable-value">blog post</span>
+                                        </div>
+                                        <div class="variable-item">
+                                            <span class="variable-name">topic</span>
+                                            <span class="variable-value">AI tools</span>
+                                        </div>
+                                        <div class="variable-item">
+                                            <span class="variable-name">audience</span>
+                                            <span class="variable-value">developers</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-panel" id="panel-search" style="display:none;">
+                                <div class="panel-header">
+                                    <h3>🔍 Smart Search</h3>
+                                    <span class="panel-badge search">5 results</span>
+                                </div>
+                                <div class="search-interface">
+                                    <div class="search-bar">
+                                        <span class="search-icon">🔍</span>
+                                        <span class="search-text">code explanation --tags coding --rating 4+</span>
+                                    </div>
+                                    <div class="search-results">
+                                        <div class="search-result">
+                                            <div class="result-title">Code Explainer</div>
+                                            <div class="result-snippet">"Explain this code step by step..."</div>
+                                            <div class="result-meta">
+                                                <span class="tag">coding</span>
+                                                <span class="rating">⭐⭐⭐⭐⭐</span>
+                                            </div>
+                                        </div>
+                                        <div class="search-result">
+                                            <div class="result-title">Debug Helper</div>
+                                            <div class="result-snippet">"Help me debug this code..."</div>
+                                            <div class="result-meta">
+                                                <span class="tag">debug</span>
+                                                <span class="rating">⭐⭐⭐⭐</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-panel" id="panel-analytics" style="display:none;">
+                                <div class="panel-header">
+                                    <h3>📊 Analytics</h3>
+                                    <span class="panel-badge analytics">This Month</span>
+                                </div>
+                                <div class="analytics-grid">
+                                    <div class="metric-card">
+                                        <div class="metric-value">47</div>
+                                        <div class="metric-label">Total Prompts</div>
+                                        <div class="metric-change">+15 this month</div>
+                                    </div>
+                                    <div class="metric-card">
+                                        <div class="metric-value">156</div>
+                                        <div class="metric-label">Total Uses</div>
+                                        <div class="metric-change">+89 this month</div>
+                                    </div>
+                                    <div class="metric-card">
+                                        <div class="metric-value">4.2</div>
+                                        <div class="metric-label">Avg Rating</div>
+                                        <div class="metric-change">↑ 0.3 improvement</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="interface-tabs">
+                            <button class="tab-btn active" data-panel="panel-save">
+                                <span class="tab-icon">💾</span>
+                                <span class="tab-label">Save & Organize</span>
+                            </button>
+                            <button class="tab-btn" data-panel="panel-template">
+                                <span class="tab-icon">🔧</span>
+                                <span class="tab-label">Templates</span>
+                            </button>
+                            <button class="tab-btn" data-panel="panel-search">
+                                <span class="tab-icon">🔍</span>
+                                <span class="tab-label">Smart Search</span>
+                            </button>
+                            <button class="tab-btn" data-panel="panel-analytics">
+                                <span class="tab-icon">📊</span>
+                                <span class="tab-label">Analytics</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Feature Cards Grid -->
+                <div class="features-grid-modern">
+                    <div class="feature-card-modern">
+                        <div class="feature-header">
+                            <div class="feature-icon-modern">🎯</div>
+                            <h3>Smart Organization</h3>
+                        </div>
+                        <p>Save, tag, and rate your prompts with instant search. Find exactly what you need, when you need it.</p>
+                        <div class="feature-highlight">
+                            <span class="highlight-badge">Instant Search</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card-modern">
+                        <div class="feature-header">
+                            <div class="feature-icon-modern">🔧</div>
+                            <h3>Powerful Templates</h3>
+                        </div>
+                        <p>Create reusable templates with variables using Jinja2 syntax. One template, infinite possibilities.</p>
+                        <div class="feature-highlight">
+                            <span class="highlight-badge template">Jinja2 Variables</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card-modern">
+                        <div class="feature-header">
+                            <div class="feature-icon-modern">📊</div>
+                            <h3>Analytics & Insights</h3>
+                        </div>
+                        <p>Track usage patterns, ratings, and optimize your prompt effectiveness with detailed statistics.</p>
+                        <div class="feature-highlight">
+                            <span class="highlight-badge analytics">Usage Tracking</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card-modern">
+                        <div class="feature-header">
+                            <div class="feature-icon-modern">⚡</div>
+                            <h3>Lightning Fast</h3>
+                        </div>
+                        <p>Local SQLite database ensures instant search and retrieval. No cloud dependencies or latency.</p>
+                        <div class="feature-highlight">
+                            <span class="highlight-badge speed">Local-First</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card-modern">
+                        <div class="feature-header">
+                            <div class="feature-icon-modern">🔄</div>
+                            <h3>Cross-Platform</h3>
+                        </div>
+                        <p>CLI, VSCode/Cursor extension, and Claude Code MCP server. Works everywhere you code.</p>
+                        <div class="feature-highlight">
+                            <span class="highlight-badge platform">3 Integrations</span>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card-modern">
+                        <div class="feature-header">
+                            <div class="feature-icon-modern">🛡️</div>
+                            <h3>Privacy First</h3>
+                        </div>
+                        <p>All data stored locally on your machine. You own your prompts, always.</p>
+                        <div class="feature-highlight">
+                            <span class="highlight-badge privacy">100% Private</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Section -->
+        <section id="demo" class="demo">
+            <div class="container">
+                <div class="section-header">
+                    <h2>See PromptForge in Action</h2>
+                    <p>From CLI to IDE integration, experience the full workflow</p>
+                </div>
+                
+                <div class="demo-tabs">
+                    <button class="tab-btn active" data-tab="cli">CLI Interface</button>
+                    <button class="tab-btn" data-tab="vscode">VSCode Extension</button>
+                    <button class="tab-btn" data-tab="features">Advanced Features</button>
+                </div>
+                
+                <div class="demo-content">
+                    <div class="tab-content active" id="cli">
+                        <div class="demo-image">
+                            <img src="screenshots/main-interface.png" alt="PromptForge CLI Interface" loading="lazy">
+                        </div>
+                        <div class="demo-description">
+                            <h3>Powerful CLI Experience</h3>
+                            <p>Professional command-line interface with rich formatting, interactive selection, and instant feedback. Built for developer workflows.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="vscode">
+                        <div class="demo-image">
+                            <img src="screenshots/ide.png" alt="VSCode Extension" loading="lazy">
+                        </div>
+                        <div class="demo-description">
+                            <h3>Seamless IDE Integration</h3>
+                            <p>Access your prompts directly in VSCode and Cursor. Command palette integration, context menus, and chat participant support.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="features">
+                        <div class="demo-image">
+                            <img src="screenshots/template-usage.png" alt="Template Features" loading="lazy">
+                        </div>
+                        <div class="demo-description">
+                            <h3>Advanced Template System</h3>
+                            <p>Create dynamic prompts with variables, use Jinja2 templating, and build reusable prompt libraries for your team.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Installation Section -->
+        <section id="install" class="install">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Quick Installation</h2>
+                    <p>Get started in under 2 minutes</p>
+                </div>
+                
+                <div class="install-tabs">
+                    <button class="tab-btn active" data-tab="quick">Quick Install</button>
+                    <button class="tab-btn" data-tab="manual">Manual</button>
+                    <button class="tab-btn" data-tab="all">All Components</button>
+                </div>
+                
+                <div class="install-content">
+                    <div class="tab-content active" id="quick">
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-title">One-line installation</span>
+                                <button class="copy-btn" data-copy="# Download latest release
+curl -L https://github.com/aki21j/promptforge-releases/releases/latest/download/promptforge-linux.tar.gz | tar -xz
+cd promptforge-* && ./install-beta.sh">Copy</button>
+                            </div>
+                            <pre><code># Download latest release
+curl -L https://github.com/aki21j/promptforge-releases/releases/latest/download/promptforge-linux.tar.gz | tar -xz
+cd promptforge-* && ./install-beta.sh</code></pre>
+                        </div>
+                        
+                        <div class="install-verify">
+                            <h4>Verify Installation</h4>
+                            <div class="code-block">
+                                <pre><code>pf --version
+pf save "Hello PromptForge!" --title "First Prompt"</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="manual">
+                        <div class="platform-installs">
+                            <div class="platform">
+                                <h4>macOS / Linux</h4>
+                                <div class="code-block">
+                                    <pre><code>pip install --user promptforge-*.whl
+# Add ~/.local/bin to PATH if needed</code></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="platform">
+                                <h4>Windows</h4>
+                                <div class="code-block">
+                                    <pre><code>pip install promptforge-*.whl
+# Restart terminal or add to PATH</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="all">
+                        <div class="components">
+                            <div class="component">
+                                <h4>🖥️ CLI Tool</h4>
+                                <div class="code-block">
+                                    <pre><code>pip install --user promptforge-*.whl</code></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="component">
+                                <h4>🎨 VSCode Extension</h4>
+                                <div class="code-block">
+                                    <pre><code>code --install-extension promptforge-*.vsix</code></pre>
+                                </div>
+                            </div>
+                            
+                            <div class="component">
+                                <h4>🤖 Claude Code MCP</h4>
+                                <div class="code-block">
+                                    <pre><code># Included in release package
+# See installation guide for setup</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Start Section -->
+        <section id="quickstart" class="quickstart">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Quick Start Guide</h2>
+                    <p>Essential commands to get you productive immediately</p>
+                </div>
+                
+                <div class="quickstart-grid">
+                    <div class="quickstart-card">
+                        <h3>Save Your First Prompt</h3>
+                        <div class="code-block">
+                            <pre><code>pf save "Explain this code step by step" \
+  --title "Code Explainer" \
+  --tags coding,documentation</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="quickstart-card">
+                        <h3>Create a Template</h3>
+                        <div class="code-block">
+                            <pre><code>pf save "Write a {{type}} about {{topic}}" \
+  --title "Content Writer" \
+  --template</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="quickstart-card">
+                        <h3>Search & Use</h3>
+                        <div class="code-block">
+                            <pre><code>pf search "code"
+pf use 2 --var type=blog --var topic="AI tools"</code></pre>
+                        </div>
+                    </div>
+                    
+                    <div class="quickstart-card">
+                        <h3>Browse & Analyze</h3>
+                        <div class="code-block">
+                            <pre><code>pf recent --preview
+pf tags --popular
+pf stats</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Supercharge Your AI Workflow?</h2>
+                    <p>Join developers who are already saving hours with organized prompt management</p>
+                    <div class="cta-buttons">
+                        <a href="https://github.com/aki21j/promptforge-releases/releases/latest" class="btn btn-primary btn-large">
+                            Download Latest Release
+                        </a>
+                        <a href="https://github.com/aki21j/promptforge-releases" class="btn btn-secondary btn-large">
+                            View on GitHub
+                        </a>
+                    </div>
+                    <p class="cta-note">Free and open source • MIT License • No cloud dependencies</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="brand-icon">🔥</span>
+                    <span class="brand-text">PromptForge</span>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Product</h4>
+                        <a href="#features">Features</a>
+                        <a href="#install">Installation</a>
+                        <a href="https://github.com/aki21j/promptforge-releases/releases">Releases</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Community</h4>
+                        <a href="https://github.com/aki21j/promptforge-releases">GitHub</a>
+                        <a href="https://github.com/aki21j/promptforge-releases/issues">Issues</a>
+                        <a href="https://github.com/aki21j/promptforge-releases/discussions">Discussions</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Resources</h4>
+                        <a href="https://github.com/aki21j/promptforge-releases#readme">Documentation</a>
+                        <a href="https://github.com/aki21j/promptforge-releases/blob/master/LICENSE">License</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 PromptForge. Built with ❤️ for the AI community.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/script-new.js"></script>
+</body>
+</html>
