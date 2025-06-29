@@ -16,7 +16,7 @@
 # Download from releases page and extract
 tar -xzf promptforge-*.tar.gz
 cd promptforge-*
-./install-beta.sh
+./install.sh
 
 # Or extract wheel and install directly
 pip install --user promptforge-*.whl
@@ -95,8 +95,8 @@ pf stats
 # Extract and run installer
 tar -xzf promptforge-*.tar.gz
 cd promptforge-*
-chmod +x install-beta.sh
-./install-beta.sh
+chmod +x install.sh
+./install.sh
 ```
 
 ### 📦 Individual Components
@@ -162,7 +162,7 @@ pf get --preview
 | **Template System** | ✅ Jinja2 Variables | ❌ Basic or none |
 | **Cross-Platform** | ✅ CLI + IDE + MCP | ❌ Single platform |
 | **Analytics** | ✅ Usage tracking | ❌ Limited insights |
-| **Open Source** | ✅ MIT License | ❌ Proprietary |
+| **Professional** | ✅ MIT License | ❌ Proprietary |
 
 ## 🔗 Links
 
