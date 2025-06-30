@@ -381,6 +381,7 @@ Inspired by Orchestra's clean approach with Stigg's professionalism
     padding: var(--space-2);
     border-radius: var(--radius-md);
     transition: background-color var(--transition-fast);
+    background: var(--interactive-secondary-hover);
 }
 
 .mobile-menu-toggle:hover {
