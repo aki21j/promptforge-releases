@@ -537,6 +537,10 @@
     font-size: 0.8125rem !important;     /* 13px - professional mobile size */
     line-height: 1.5 !important;        /* Better readability */
     font-family: 'JetBrains Mono', 'Courier New', monospace !important;
+    
+    /* Enhanced mobile wrapping for Pixel 7 dimensions */
+    word-break: break-word !important;
+    overflow-wrap: anywhere !important;
   }
   
   /* Terminal header - consistent spacing */
@@ -551,14 +555,16 @@
     padding: 0 !important;
     display: block !important;
     
-    /* Smart text handling for mobile */
+    /* Smart text handling for mobile - optimized for Pixel 7 */
     white-space: pre-wrap !important;
-    word-break: normal !important;
-    overflow-wrap: break-word !important;
+    word-break: break-word !important;      /* More aggressive breaking for URLs */
+    overflow-wrap: anywhere !important;     /* Better wrapping than break-word */
+    word-wrap: break-word !important;       /* Fallback for older browsers */
     
-    /* Prevent awkward line breaks in commands */
+    /* Better URL and long text handling */
     -webkit-hyphens: none !important;
     hyphens: none !important;
+    line-break: anywhere !important;        /* CSS3 line breaking */
   }
   
   /* Remove extra whitespace before first line */
@@ -579,6 +585,11 @@
     display: inline-block !important;
     max-width: calc(100% - 2rem) !important;
     /* Remove color override to preserve original styling */
+    
+    /* Enhanced text wrapping for commands and URLs */
+    word-break: break-all !important;       /* Break URLs aggressively */
+    overflow-wrap: anywhere !important;
+    white-space: pre-wrap !important;
   }
   
   /* Success messages - tighter spacing */
